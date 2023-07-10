@@ -5,8 +5,8 @@
     and spawn the wait_random function using the max_delay param"""
 
 
-from typing import List
 import asyncio
+from typing import List
 task_wait_random = __import__('3-tasks').task_wait_random
 
 
