@@ -6,8 +6,8 @@
 
 
 import asyncio
-from typing import List
 task_wait_random = __import__('3-tasks').task_wait_random
+from typing import List
 
 
 async def wait_n(n: int, max_delay: int) -> List[float]:
