@@ -12,11 +12,7 @@ async_comprehension = __import__('1-async_comprehension').async_comprehension
 async def measure_runtime() -> float:
     """async coroutine that measures the rumtime of parallel comprehensions"""
     start = time.perf_counter()
-    await asyncio.gather(
-        async_comprehension(),
-        async_comprehension(),
-        async_comprehension(),
-        async_comprehension()
-    )
+    tasks = [asyncio.create_task(async_comprehension()) for _ in range(4)]
+    await asyncio.gather(*tasks)
     stop = time.perf_counter()
     return stop - start
